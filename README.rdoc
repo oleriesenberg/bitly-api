@@ -14,14 +14,14 @@ Small library to access bitly api
   
 == INSTALL:
 
-gem sources -a http://gems.github.com
-gem install Hoodow-bitly-api
+    gem sources -a http://gems.github.com
+    gem install Hoodow-bitly-api
 
 == LICENSE:
 
 (The MIT License)
 
-Copyright (c) 2009 FIXME full name
+Copyright (c) 2009 Ole Riesenberg
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
