@@ -8,5 +8,5 @@ require 'json'
 require 'bitly-api/bitly-api'
 
 module BitlyApi
-  VERSION = '0.0.1'
+  VERSION = '0.1.0'
 end

@@ -20,16 +20,35 @@ module BitlyApi
       http_response = open(build_url("shorten", "longUrl=#{long_url}")).read
       data = JSON.parse(http_response)
       raise BitlyError.new(data["errorMessage"]) unless data["statusCode"] == "OK"
-      results = data["results"][long_url]
-      results
+      data["results"][long_url]
     end
 
     def expand(short_url)
       http_response = open(build_url("expand", "shortUrl=#{short_url}")).read
       data = JSON.parse(http_response)
       raise BitlyError.new(data["errorMessage"]) unless data["statusCode"] == "OK"
-      results = data["results"][short_url]
-      results
+      data["results"][short_url]
+    end
+
+    def info(short_url)
+      http_response = open(build_url("info", "shortUrl=#{short_url}")).read
+      data = JSON.parse(http_response)
+      raise BitlyError.new(data["errorMessage"]) unless data["statusCode"] == "OK"
+      data["results"][short_url.split(/\//)[-1]]
+    end
+
+    def stats(short_url)
+      http_response = open(build_url("stats", "shortUrl=#{short_url}")).read
+      data = JSON.parse(http_response)
+      raise BitlyError.new(data["errorMessage"]) unless data["statusCode"] == "OK"
+      data["results"]
+    end
+
+    def errors
+      http_response = open("http://api.bit.ly/errors?version=#{api_version}&login=#{login}&apiKey=#{api_key}").read
+      data = JSON.parse(http_response)
+      raise BitlyError.new(data["errorMessage"]) unless data["statusCode"] == "OK"
+      data["results"]
     end
 
     private

@@ -1,4 +1,8 @@
+== 0.1.0 2009-07-07
+
+* Covering all api methods
+
+
 == 0.0.1 2009-07-05
 
-* 1 major enhancement:
-  * Initial release
+* Initial release
