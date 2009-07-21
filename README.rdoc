@@ -17,6 +17,10 @@ Small library to access bitly api
     gem sources -a http://gems.github.com
     gem install Hoodow-bitly-api
 
+== CONTRIBUTORS:
+
+* Luke Francl ( http://github.com/look )
+
 == LICENSE:
 
 (The MIT License)
