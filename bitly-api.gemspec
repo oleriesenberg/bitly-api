@@ -34,4 +34,6 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<newgem>, [">= 1.4.1"])
     s.add_dependency(%q<hoe>, [">= 1.8.0"])
   end
+
+  s.add_dependency(%q<httpclient>, [">= 2.1.5.2"])
 end
