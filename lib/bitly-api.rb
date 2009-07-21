@@ -4,8 +4,9 @@ $:.unshift(File.dirname(__FILE__)) unless
 require 'rubygems'
 require 'httpclient'
 require 'json'
+require 'cgi'
 require 'bitly-api/bitly-api'
 
 module BitlyApi
-  VERSION = '0.1.0'
+  VERSION = '0.1.1'
 end

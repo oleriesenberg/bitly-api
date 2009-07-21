@@ -17,8 +17,9 @@ module BitlyApi
       @httpclient = HTTPClient.new
     end
 
+    # shorten +long_url+. +long_url+ is CGI escaped, so you shouldn't escape it yourself.
     def shorten(long_url)
-      http_response = @httpclient.get_content(build_url("shorten", "longUrl=#{long_url}"))
+      http_response = @httpclient.get_content(build_url("shorten", "longUrl=#{CGI::escape(long_url)}"))
       data = JSON.parse(http_response)
       raise BitlyError.new(data["errorMessage"]) unless data["statusCode"] == "OK"
       data["results"][long_url]
